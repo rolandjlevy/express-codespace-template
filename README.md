@@ -1,1 +1,1 @@
-# express-htmx-movie-finder
+# Express.js template
