@@ -4,17 +4,24 @@
 {
 	"name": "Node.js & Express",
 	"image": "mcr.microsoft.com/vscode/devcontainers/javascript-node:16-bullseye",
-	"forwardPorts": [
-		3000
-	],
+	"forwardPorts": [3000],
 	"postCreateCommand": "npm install",
 	"remoteUser": "node",
 	"customizations": {
-		"vscode": {
-			"extensions": [
-				"esbenp.prettier-vscode",
-				"dbaeumer.vscode-eslint"
-			]
-		}
-	}
+    "vscode": {
+      "extensions": ["esbenp.prettier-vscode", "dbaeumer.vscode-eslint", "mongodb.mongodb-vscode"],
+      "settings": {
+        "editor.tabSize": 2,
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "workbench.colorTheme": "Default Dark+",
+        "files.autoSave": "onFocusChange",
+        "editor.formatOnSave": true,
+        "files.watcherExclude": {
+          "**/.git/objects/**": true,
+          "**/.git/subtree-cache/**": true,
+          "**/node_modules/**": true
+        }
+      }
+    }
+  }
 }
