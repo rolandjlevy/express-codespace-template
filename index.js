@@ -7,6 +7,27 @@ const port = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+const { utils } = require('roland-code-npm');
+
+const { convertStringValuesRecursively } = utils.string;
+
+const obj = {
+  name: 'roland levy',
+  interests: ['meditation', 'coding', 'art'],
+  address: '37 Wyndale Road, Leicester, LE23WS',
+  family: {
+    emily: {
+      relationship: 'wife',
+      age: 41,
+      email: 'ejlevy@gmail.com'
+    }
+  }
+};
+
+const test = convertStringValuesRecursively({obj, transformFn: 'toUpperCase'});
+
+console.log(test);
+
 // home
 app.get('/', (req, res) => res.send('Home'));
 
