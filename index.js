@@ -7,9 +7,9 @@ const port = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-const { utils } = require('roland-code-npm');
+const { stringUtils } = require('roland-code-npm');
 
-const { convertStringValuesRecursively } = utils.string;
+const { convertStringValuesRecursively } = stringUtils;
 
 const obj = {
   name: 'roland levy',
